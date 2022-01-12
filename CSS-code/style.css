@@ -1,0 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Sora&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    font-family: Sora,sans-serif;
+    color: #8c9bbc;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Sora', sans-serif;
+}
+
+.container {
+    width: 100vh;
+    display: block;
+}
+
+.img-fluid {
+    width: 45%;
+    margin-left: 50%;
+    margin-top: 15%;
+    
+}
+
+.text {
+    text-align: start;
+    font-size: 52px;
+}
