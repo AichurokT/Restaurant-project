@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Sora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Shalimar&display=swap');
 :root {
     --dark-blue-color: #1E3765;
     --main-blue-color: #5576D1;
@@ -102,4 +103,65 @@ width: 200px;
     opacity: 0.5;
     padding-left: 20px;
 }
+ /* category Aisuluu  */
+    /* grid container & line */
+    #menu-part{
+        margin-top: 30px;
+        padding-left: 0 50px;
+    }
+     #line{
+        width: 350px;
+        display: flex;
+        justify-content: center;
+        margin-left: 25rem;
+        
+}
+    .line{
+       width:100px;
+       height:1px;
+       background-color:grey ; 
+       margin-top: 20px; 
+    }
+    #line h2:hover{
+        color: orangered;
+    }
+    #grid-container {
+       display: grid;
+       grid-template-columns: auto auto auto;
+       padding: 10px;
+       grid-gap: 50px 100px;
+     }
+     #grid-item {
+       width:450px;
+       height: 200px;
+       padding: 20px;
+       text-align: center;
+       border-radius:20px ;
+       box-shadow: 0 10px 20px 10px rgba(98, 106, 117, 0.3);
+      /* -webkit-transition: all 0.3s ease-in-out;
+       transition: all 0.3s ease-in-out; */
+      
+     }
+     #grid-text a{
+     width: 326px;
+     height:80px;
+     font-size: 55px;
+     font-weight: bolder;
+     /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Shalimar', cursive;
+}
+  #grid-item:hover{
+      width: 480px;
+      height: 210px;
+      opacity:0.5 ;
+      background-size: 120%;
+      -webkit-transition: all 0.3s ease-in-out;
+       transition: all 0.3s ease-in-out;
+  }
+      /* mobile version */
+  @media only screen and (max-width:500px){
+     #grid-item, #line{
+         width: 100%;
+     } 
+  }
 
