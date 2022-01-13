@@ -7,12 +7,22 @@
     --green-price-color: #44CA67;
     --grey-color: #e7e9ee;
   }
+  .container123 {
+    display: flex;
+    flex-wrap: wrap;
+}
+img{
+    width: 100px;
+}
+.container123 div:hover {
+width: 200px;
+}
 * {
     margin: 0;
     padding: 0;
     /* background-color: #fff; */
     font-family: Sora,sans-serif;
-    color: #8c9bbc;
+    color: var(--text-blue-color);
     font-size: 20px;
     font-weight: 500;
     font-family: 'Sora', sans-serif;
