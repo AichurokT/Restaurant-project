@@ -1,6 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Sora&display=swap');
-
+:root {
+    --dark-blue-color: #1E3765;
+    --main-blue-color: #5576D1;
+    --text-blue-color: #8C9BBC;
+    --green-price-color: #44CA67;
+    --grey-color: #e7e9ee;
+  }
 * {
     margin: 0;
     padding: 0;
