@@ -168,7 +168,7 @@ body {
   box-sizing: border-box;
   font-family: sans-serif;
 }
-.main {
+.master {
   display: flex;
   border: 1px solid red;
   /* justify-content: space-around; */
@@ -196,6 +196,7 @@ body {
 .left-menu a {
   text-decoration: none;
   color: #8c9bbc;
+  pointer-events: none;
 }
 .left-menu a:hover {
   color: #5576d1;
@@ -240,7 +241,7 @@ body {
 }
 .item-img {
   /* border: 1px solid red; */
-  background-image: url("https://assets.website-files.com/5e613103afff65141c9d0b09/61c930e27847b8066f6b6e4a_lite%20breakfast.jpg");
+  /* background-image: url("https://assets.website-files.com/5e613103afff65141c9d0b09/61c930e27847b8066f6b6e4a_lite%20breakfast.jpg"); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -263,7 +264,9 @@ body {
   box-shadow: 0px 0px 10px -5px #5576d1;
   /* background-color: turquoise; */
 }
-
+.aichurok {
+  display: none;
+}
 /* mobile version */
 @media only screen and (max-width: 500px) {
   #grid-item,
