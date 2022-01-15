@@ -1,1 +1,1 @@
-const test=test
+import { getDataMado } from "./dataMado.js";
