@@ -15,23 +15,24 @@
     />
   </head>
   <body>
-    //navbar
+    
+     <!-- Container of main page -->
+    <div class="main-conatiner">
+      <!-- Top navbar -->
     <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 fixed-top">
       <div class="container">
-        <a href="#" class="navbar-brand">Mado</a>
+        <!-- <a href="#" class="navbar-brand">Mado</a> -->
+        <img class='logo' src="https://assets.website-files.com/5e61309e2ea57b96254de07c/5ec63e2510ee74ccc9acb969_logo.svg">
 
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navmenu"
-        >
-          <span class="navbar-toggler-icon"></span>
+        >span class="navbar-toggler-icon"></span>
         </button>
 
-        <button type="button" class="btn btn-primary btn-md">
-          Reserve a table
-        </button>
+        <button class='reserve'>Reserve a table</button>
 
         <div class="collapse navbar-collapse" id="navmenu">
           <ul class="navbar-nav ms-auto">
@@ -46,50 +47,34 @@
             </li>
           </ul>
         </div>
+
       </div>
     </nav>
 
-    //body container
-    <div class="container">
-      <div>
-        <img
-          src="https://assets.website-files.com/5e61309e2ea57b96254de07c/5f151c946f7ca9d8431f85a4_borek.png"
-          class="img-fluid"
-          alt=""
-        />
-      </div>
-
-      <div class="text">
-        <h2>Taste the real</h2>
-        <h1>borek</h1>
-        <button>reserve a table</button>
-      </div>
-      <!-- </div> -->
-      <!-- next apply section  -->
-      <div class="apply">
-        <p class="part-content">be a part of our team</p>
+    <!-- Body part -->
+    <!-- <div class="body-container"> -->
+      <img src="https://assets.website-files.com/5e61309e2ea57b96254de07c/5f151c946f7ca9d8431f85a4_borek.png" class="img-fluid" alt=''>
+        <div class="text">
+        <h2>taste the real</h2>
+        <h1>börek</h1>
+        </div>
+    <!-- </div> -->
+    
+    <!-- Next apply section  -->
+    <div class="apply">
+        <p class="part-content ">Be a part of our team</p>
         <h2 class="hiring-content bold">We are hiring!</h2>
-        <p class="chef">
-          Experienced Chefs, Prep Cooks, Bakery Staff, Dishwashers,Servers,Hosts
-          & Hostesses
-        </p>
+        <p class="chef">Experienced Chefs, Prep Cooks, Bakery Staff, Dishwashers,Servers,Hosts & Hostesses</p>
         <button class="apply-btn">Apply Now</button>
+    </div> 
+           <!-- subscribe part  -->
+    <div class="subscribe">
+          <form>
+                <input type="email" placeholder="Email" id="subscribe"><br>
+                <input type="submit" value="Subscribe" class="subs">
+          </form>
       </div>
-      <!-- subscribe part  -->
-      <div class="subscribe">
-        <p class="pickup" style="width: 660px">
-          For <b>Delivery</b> & <b>Pick Up</b> Orders At 3300 Dufferin St
-        </p>
-        <h2 class="bold">You heard it right!</h2>
-        <p>
-          MADO is now in Toronto!Subscribe below to keep up with the latest news
-          and updates.
-        </p>
-        <form>
-          <input type="email" placeholder="Email" id="subscribe" /><br />
-          <input type="submit" value="Subscribe" class="subs" />
-        </form>
-      </div>
+    </div>
 
       <!-- category Aisuluu -->
       <div id="menu-part">
