@@ -13,34 +13,38 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   </head>
-  <body>
-    <div class="aichurok">
-      //navbar
-      <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 fixed-top">
-        <div class="container">
-          <a href="#" class="navbar-brand">Mado</a>
+  <body> 
+     <!-- Container of main page -->
+    <div class="main-conatiner">
+      <!-- Top navbar -->
+    <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 fixed-top">
+      <div class="container">
+        <!-- <a href="#" class="navbar-brand">Mado</a> -->
+        <img class='logo' src="https://assets.website-files.com/5e61309e2ea57b96254de07c/5ec63e2510ee74ccc9acb969_logo.svg">
 
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navmenu"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+        >span class="navbar-toggler-icon"></span>
+        </button>
 
-          <button type="button" class="btn btn-primary btn-md">
-            Reserve a table
-          </button>
+        <button class='reserve'>Reserve a table</button>
+
 
           <div class="collapse navbar-collapse" id="navmenu">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a href="#learn" class="nav-link">Locations</a>
+                <input type="text" id="search-bar" placeholder="search here sir!" >
+                <button id="searchBtn" value="submit"><i class="fas fa-search"></i></button>                <!-- <a href="#learn" class="nav-link">Locations</a> -->
+                           
               </li>
               <li class="nav-item">
-                <a href="#questions" class="nav-link">Menu</a>
+                <a href="#questions"  class="menu-id nav-link">Menu</a>
               </li>
               <li class="nav-item">
                 <a href="#instructors" class="nav-link">About us</a>
@@ -48,53 +52,39 @@
             </ul>
           </div>
         </div>
-      </nav>
 
-      //body container
-      <div class="container">
-        <div>
-          <img
-            src="https://assets.website-files.com/5e61309e2ea57b96254de07c/5f151c946f7ca9d8431f85a4_borek.png"
-            class="img-fluid"
-            alt=""
-          />
-        </div>
 
+      <!-- </div> -->
+    </nav>
+
+    <!-- Body part -->
+    <!-- <div class="body-container"> -->
+      <img src="https://assets.website-files.com/5e61309e2ea57b96254de07c/5f151c946f7ca9d8431f85a4_borek.png" class="img-fluid" alt=''>
         <div class="text">
-          <h2>Taste the real</h2>
-          <h1>borek</h1>
-          <button>reserve a table</button>
+        <h2>taste the real</h2>
+        <h1>börek</h1>
         </div>
-        <!-- </div> -->
-        <!-- next apply section  -->
-        <div class="apply">
-          <p class="part-content">be a part of our team</p>
-          <h2 class="hiring-content bold">We are hiring!</h2>
-          <p class="chef">
-            Experienced Chefs, Prep Cooks, Bakery Staff,
-            Dishwashers,Servers,Hosts & Hostesses
-          </p>
-          <button class="apply-btn">Apply Now</button>
-        </div>
-        <!-- subscribe part  -->
-        <div class="subscribe">
-          <p class="pickup" style="width: 660px">
-            For <b>Delivery</b> & <b>Pick Up</b> Orders At 3300 Dufferin St
-          </p>
-          <h2 class="bold">You heard it right!</h2>
-          <p>
-            MADO is now in Toronto!Subscribe below to keep up with the latest
-            news and updates.
-          </p>
+    <!-- </div> -->
+    
+    <!-- Next apply section  -->
+    <div class="apply">
+        <p class="part-content ">Be a part of our team</p>
+        <h2 class="hiring-content bold">We are hiring!</h2>
+        <p class="chef">Experienced Chefs, Prep Cooks, Bakery Staff, Dishwashers,Servers,Hosts & Hostesses</p>
+        <button class="apply-btn">Apply Now</button>
+    </div> 
+           <!-- subscribe part  -->
+    <div class="subscribe">
           <form>
-            <input type="email" placeholder="Email" id="subscribe" /><br />
-            <input type="submit" value="Subscribe" class="subs" />
+                <input type="email" placeholder="Email" id="subscribe"><br>
+                <input type="submit" value="Subscribe" class="subs">
           </form>
-        </div>
       </div>
+    </div>
+
 
       <!-- category Aisuluu -->
-    </div>
+   
     <div id="menu-part">
       <div id="line">
         <div class="line"></div>
@@ -103,7 +93,8 @@
       </div>
       <div id="grid-container">
         <div
-          id="grid-item"
+          class="grid-item"
+          id="breakfast"
           style="
             background-image: url('https://th.bing.com/th/id/OIP.slwKd1jghhAI5bmrmnYUPwHaEo?pid=ImgDet&rs=1');
             background-repeat: no-repeat;
@@ -112,11 +103,11 @@
           "
         >
           <div id="grid-text" style="color: white">
-            <a>Breakfast & Eggs</a>
+            <a href="">Breakfast & Eggs</a>
           </div>
         </div>
         <div
-          id="grid-item"
+          class="grid-item"
           style="
             background-image: url('http://www.bakerynouveau.com/wp-content/uploads/2019/05/mixed-pastry-.jpg');
             background-repeat: no-repeat;
@@ -126,7 +117,7 @@
           <div id="grid-text" style="color: black"><a>Bakery</a></div>
         </div>
         <div
-          id="grid-item"
+        class="grid-item"
           style="
             background-image: url('https://i.pinimg.com/originals/30/47/82/30478202dbf1e06a1a2413d72c79749a.jpg');
             background-repeat: no-repeat;
@@ -139,7 +130,7 @@
           </div>
         </div>
         <div
-          id="grid-item"
+        class="grid-item"
           style="
             background-image: url('https://www.loudwallpapers.com/wp-content/uploads/2018/12/slices-of-sandwich-with-tomato-sauce.jpg');
             background-repeat: no-repeat;
@@ -152,7 +143,7 @@
           </div>
         </div>
         <div
-          id="grid-item"
+        class="grid-item"
           style="
             background-image: url('https://wallpapers-all.com/uploads/posts/2017-04/6_pizza.jpg');
             background-repeat: no-repeat;
@@ -162,7 +153,7 @@
           <div id="grid-text" style="color: white"><a>Pasta & Pizza</a></div>
         </div>
         <div
-          id="grid-item"
+        class="grid-item"
           style="
             background-image: url('https://cook.fnr.sndimg.com/content/dam/images/cook/fullset/2011/5/20/0/CCTUL104_Ultimate-Paella_s4x3.jpg.rend.hgtvcom.966.725.suffix/1348881454450.jpeg');
             background-repeat: no-repeat;
@@ -172,7 +163,7 @@
           <div id="grid-text" style="color: white"><a>Mains</a></div>
         </div>
         <div
-          id="grid-item"
+        class="grid-item"
           style="
             background-image: url('https://img5.goodfon.com/wallpaper/nbig/4/e0/turkey-dessert-turkish-cuisine-baklava.jpg');
             background-repeat: no-repeat;
@@ -182,7 +173,7 @@
           <div id="grid-text" style="color: white"><a>Baklava</a></div>
         </div>
         <div
-          id="grid-item"
+        class="grid-item"
           style="
             background-image: url('https://www.mademoiselledesserts.com/medias/images/gamme-patissiere/familles/uk/produits/pudding-large.jpg');
             background-repeat: no-repeat;
@@ -192,7 +183,7 @@
           <div id="grid-text" style="color: white"><a>Hot Desserts</a></div>
         </div>
         <div
-          id="grid-item"
+        class="grid-item"
           style="
             background-image: url('https://files.heftycdn.com/wp-content/uploads/2019/04/9b1d50393b738508fc1fe0933222af52-1.jpg');
             background-repeat: no-repeat;
@@ -202,7 +193,7 @@
           <div id="grid-text" style="color: white"><a>Cold Desserts</a></div>
         </div>
         <div
-          id="grid-item"
+        class="grid-item"
           style="
             background-image: url('https://www.thefrozenyogurtreview.com/wp-content/uploads/2014/03/Ice-Cr-Vs-Froyo.jpg');
             background-repeat: no-repeat;
@@ -214,7 +205,7 @@
           </div>
         </div>
         <div
-          id="grid-item"
+        class="grid-item"
           style="
             background-image: url('http://www.coachhouseinn.co.uk/wp-content/uploads/2016/09/billionphotos-1675816.jpg');
             background-repeat: no-repeat;
@@ -224,7 +215,7 @@
           <div id="grid-text" style="color: white"><a>Hot Drinks</a></div>
         </div>
         <div
-          id="grid-item"
+        class="grid-item"
           style="
             background-image: url('https://dish-environment-prod-contentbucket-10u8bszryovz3.s3.amazonaws.com/assets/s3fs-public/styles/social_share/public/Photo-by-Meredith1.jpg?itok=JzsBZzKJ');
             background-repeat: no-repeat;
@@ -240,7 +231,7 @@
     <div class="master">
       <aside class="left-categories">
         <ul class="left-menu">
-          <a href="#"><h4 id="h4">Menu</h4></a>
+          <div ><h4 class="menu-id" id="h4">Menu</h4></div> 
           <li id="breakfast"><a href="#">Breakfasts & Eggs</a></li>
           <li id="bakery"><a href="#">Bakery</a></li>
           <li id="salads"><a href="#">Appetizers & Salads & Sides</a></li>
