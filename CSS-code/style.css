@@ -302,7 +302,116 @@ body {
 .aichurok {
   display: none;
 }
+
+
+/*Daniiar's Part*/
+
+
+.similar-products {
+  margin: 20px auto;
+  
+}
+
+.product-container {
+  margin-bottom: 15rem;
+  margin-top: 15rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
+
+  
+}
+
+.chosen-product-name {
+  color: rgb(30,55,101);
+  font-size: 50px;
+  font-family:sans-serif;
+  font-weight: 900;
+  line-height: 145%;
+  margin-right: 3rem;
+}
+
+.product-description {
+  color: black;
+}
+
+.chosen-product-img  img {
+  width: 300px;
+  height: 300px;
+margin: 30px;
+box-shadow: 0 2px 8px 0 rgb(0 0 0 / 15%);
+border-radius: 10px;
+
+
+}
+
+.chosen-product-img  img:hover{
+  transform: scale(1.05);
+  transition: 0.5s ease;
+}
+
+
+
+.delivery-logo img {
+  width: 60px;
+}
+
+
+.similar-product-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+
+}
+
+.similar-product-list img {
+   width: 100px;  
+  
+}
+
+.similar-product-name {
+  color: rgb(56,78,119);
+  font-weight: bold;
+  margin-bottom: 1px;
+  
+}
+
+.product-price {
+  color: rgb(68,202,103);
+  font-weight: bold;
+}
+
+.similar-h1 {
+  color: rgb(30,55,101);
+  font-weight: bold;
+}
+
+.grid-similar-product .product-card {
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 15%);
+  border-radius: 10px;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 3.5fr; 
+  padding: 0;
+
+  
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  transition: 0.5s ease;
+}
+
+.grid-product {
+  margin: 0;
+  padding: 0;
+}
+
+
 /* mobile version */
+
+
+
 @media only screen and (max-width: 500px) {
   #grid-item,
   #line {
