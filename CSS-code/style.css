@@ -42,15 +42,16 @@ body{
 
 .text {
   position: relative;
-  width: 5%;
+  height: 20%;
+  width: 60%;
+  margin-top: 0;
 }
-
 .taste{
   color: var(--dark-blue-color);
   font-size: 4rem;
   position: absolute;
-  top: 10rem;
-  left: 2rem;
+  left: 3rem;
+  bottom: 11.5rem;
 }
 
 .borek{
@@ -58,8 +59,8 @@ body{
   font-size: 6rem;
   font-weight: bolder;
   position: absolute;
-  top: 15rem;
-  left: 8rem;
+  bottom: 5rem;
+  left: 10rem;
 }
 
 .img-fluid {
