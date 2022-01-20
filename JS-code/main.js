@@ -1,9 +1,9 @@
 import { getDataMado } from "./dataMado.js";
+// import { navFilter } from "./filter.js";
 
 const dataMado = getDataMado();
 const leftMenu= document.querySelector(".left-menu")
 const rightMenu=document.querySelector(".right-menu")
-const container = document.querySelector(".container123");
 const titleMenu = document.querySelector("#h1")
 const gridContainer=document.querySelector("#grid-container")
 const menuId=document.querySelector(".menu-id")
@@ -44,11 +44,12 @@ const filteredArray = dataMado.filter(el => el.menus.toLowerCase().includes(item
 
       
 showItems(filteredArray)
+navFilter(filteredArray); // calling filter part and show
 // console.log(filteredArray)
 
 }
 //fucntion for each category
-function showItems(arr){
+export function showItems(arr){
     
     gridContainer.style.display="none"
     clearContainer()
