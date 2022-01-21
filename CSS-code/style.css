@@ -334,13 +334,6 @@ body {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
-.active {
-  color: var(--dark-blue-color);
-}
-
-.aichurok {
-  display: none;
-}
 
 /*Daniiar's Part*/
 

@@ -5,11 +5,13 @@ const dataMado = getDataMado();
 const leftMenu = document.querySelector(".left-menu")
 const rightMenu = document.querySelector(".right-menu")
 const titleMenu = document.querySelector("#h1")
-
+const mainContainer = document.querySelector(".main-conatiner")
 const gridContainer=document.querySelector("#grid-container")
 const menuId=document.querySelector(".menu-id")
 const searchByNames=document.querySelector("#search-bar")
 const searchBtn=document.querySelector("#searchBtn")
+const categoryPart=document.querySelector(".master")
+const madoPage=document.querySelector(".mado-logo")
 
 
 
@@ -27,14 +29,19 @@ titleMenu.innerText=item.innerText
 const filteredArray = dataMado.filter(el => el.menus.toLowerCase().includes(item.id))     
 showItems(filteredArray)
 navFilter(filteredArray); // calling filter part and show
-
-
-
+}
+// show main page
+function showMainPage(){
+    mainContainer.style.display="block"
+    categoryPart.style.display="none"
+    gridContainer.style.display = "none"
 }
 
 //fucntion for each category
 function showItems(arr) {
     gridContainer.style.display = "none"
+    mainContainer.style.display="none"
+    categoryPart.style.display="flex"
     clearContainer()
     for(let i=0; i<arr.length;i++){
         const newDiv=document.createElement("div")
@@ -54,6 +61,9 @@ function showItems(arr) {
 }
 function menuDirection() {
     gridContainer.style.display = "grid"
+    mainContainer.style.display="none"
+    categoryPart.style.display="none"
+   
 }
 // search fucntion by itemTitle name
 function searchButton() {
@@ -62,12 +72,6 @@ function searchButton() {
     return showItems(searchedArray)
 }
 
-// event listeners
-searchBtn.addEventListener("click", searchButton)
-// searchByNames.addEventListener("click")
-menuId.addEventListener("click", menuDirection)
-gridContainer.addEventListener("click", rightMenuAction)
-leftMenu.addEventListener("click", rightMenuAction)
 
 /// Please double check this code ----\/
 // const searchData = dataMado.filter((el) => {
@@ -129,11 +133,8 @@ function itemTitleFn(filteredArray, dataList) {
 
 
 
-// event listeners
-searchBtn.addEventListener("click", searchButton )
-menuId.addEventListener("click", menuDirection)
-gridContainer.addEventListener("click",rightMenuAction )
-leftMenu.addEventListener("click", rightMenuAction)
+
+
 
 document.querySelector('.servedForInput').addEventListener('input', function (event) {
     const item = event.target.value;
@@ -150,4 +151,10 @@ document.querySelector('.itemTitleInput').addEventListener('input', function (ev
 // document.querySelector("#priceSearch").addEventListener("click", () => {
 //     console.log("price click")
 // })
+// event listeners
+searchBtn.addEventListener("click", searchButton )
+menuId.addEventListener("click", menuDirection)
+gridContainer.addEventListener("click",rightMenuAction )
+leftMenu.addEventListener("click", rightMenuAction)
+madoPage.addEventListener("click", showMainPage)
 
