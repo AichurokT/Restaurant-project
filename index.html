@@ -17,42 +17,43 @@
 
 <body>
   <!-- Container of main page -->
-  <div class="main-conatiner">
-    <!-- Top navbar -->
-    <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 fixed-top">
-      <div class="container">
-        <!-- <a href="#" class="navbar-brand">Mado</a> -->
-        <img class='logo'
+  <!-- Top navbar -->
+  <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 fixed-top">
+    <div class="container">
+      <!-- <a href="#" class="navbar-brand">Mado</a> -->
+      <div class="mado-logo">
+        <img class="logo"
           src="https://assets.website-files.com/5e61309e2ea57b96254de07c/5ec63e2510ee74ccc9acb969_logo.svg">
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">span
-          class="navbar-toggler-icon"></span>
-        </button>
-
-        <button class='reserve'>Reserve a table</button>
-
-
-        <div class="collapse navbar-collapse" id="navmenu">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <input type="text" id="search-bar" placeholder="Search here">
-              <button id="searchBtn" value="submit"><i class="fas fa-search"></i></button>
-              <!-- <a href="#learn" class="nav-link">Locations</a> -->
-
-            </li>
-            <li class="nav-item">
-              <a href="#questions" class="menu-id nav-link">Menu</a>
-            </li>
-            <li class="nav-item">
-              <a href="#instructors" class="nav-link">About us</a>
-            </li>
-          </ul>
-        </div>
       </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">span
+        class="navbar-toggler-icon"></span>
+      </button>
+
+      <button class='reserve'>Reserve a table</button>
 
 
-      <!-- </div> -->
-    </nav>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <input type="text" id="search-bar" placeholder="Search here">
+            <button id="searchBtn" value="submit"><i class="fas fa-search"></i></button>
+            <!-- <a href="#learn" class="nav-link">Locations</a> -->
+
+          </li>
+          <li class="nav-item">
+            <a href="#questions" class="menu-id nav-link">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a href="#instructors" class="nav-link">About us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- </div> -->
+  </nav>
+  <div class="main-conatiner">
 
     <!-- Body part -->
     <!-- <div class="body-container"> -->
@@ -194,19 +195,17 @@
     <form action="" class="servedFor">
       <input class="servedForInput" list="servedFor" name="servedFor" placeholder="served for">
       <datalist id="servedFor"></datalist>
-      <input type="submit">
     </form>
 
     <form action="" class="itemTitle">
       <input class="itemTitleInput" list="itemTitle" name="itemTitle" placeholder="item Title">
       <datalist id="itemTitle"></datalist>
-      <input type="submit">
     </form>
 
     <form action="" class="slidecontainer">
       <!-- <label for="vol">Price (between 0 and 100):</label> <br> -->
       <span>price max:</span> <span id="vMax"></span>
-      <input type="range" class="slidePrice" id="priceMax" value="20" max="60"><br>
+      <input type="range" class="slidePrice" id="priceMax" max="60"><br>
       <input type="submit" value="Submit" id="priceSearch">
     </form>
   </div>
@@ -219,7 +218,7 @@
         <h4 class="menu-id" id="h4">Menu</h4>
       </div>
       <ul class="left-menu">
-        <li id="breakfast active"><a href="#">Breakfasts & Eggs</a></li>
+        <li id="breakfast"><a href="#">Breakfasts & Eggs</a></li>
         <li id="bakery"><a href="#">Bakery</a></li>
         <li id="salads"><a href="#">Appetizers & Salads & Sides</a></li>
         <li id="wraps"><a href="#">Wraps & Gozleme & Sandwiches</a></li>
@@ -271,112 +270,115 @@
     </div>
   </div>
 
-    <!--Here Similar Products -->
+  <!--Here Similar Products -->
 
-    <div class="similar-products">
-      <div>
-        <h3 class="similar-h1">Similar Products</h3>
-      </div>
-
-
-      <div class="similar-product-list">
-
-        <div class="grid-similar-product">
+  <div class="similar-products">
+    <div>
+      <h3 class="similar-h1">Similar Products</h3>
+    </div>
 
 
+    <div class="similar-product-list">
 
-          <div class="product-card"> <img src="https://www.grandbazaarist.com/wp-content/uploads/2019/10/Simit.jpg"
-              alt="">
-
-            <div class="grid-product grid-product-1">
-              <p class="similar-product-name">Pogacha with Cheese</p>
-              <p class="product-price">$2.99</p>
-            </div>
-          </div>
+      <div class="grid-similar-product">
 
 
 
+        <div class="product-card"> <img src="https://www.grandbazaarist.com/wp-content/uploads/2019/10/Simit.jpg"
+            alt="">
 
-
-
-          <div class="product-card"> <img src="https://www.grandbazaarist.com/wp-content/uploads/2019/10/Simit.jpg"
-              alt="">
-
-            <div class="grid-product grid-product-2">
-              <p class="similar-product-name">Plain Pogacha</p>
-              <p class="product-price">$2.99</p>
-            </div>
+          <div class="grid-product grid-product-1">
+            <p class="similar-product-name">Pogacha with Cheese</p>
+            <p class="product-price">$2.99</p>
           </div>
         </div>
 
-        <div class="grid-similar-product">
 
-          <div class="product-card"> <img src="https://www.grandbazaarist.com/wp-content/uploads/2019/10/Simit.jpg"
-              alt="">
 
-            <div class="grid-product grid-product-3">
-              <p class="similar-product-name">Plain Acma</p>
-              <p class="product-price">$2.99</p>
-            </div>
+
+
+
+        <div class="product-card"> <img src="https://www.grandbazaarist.com/wp-content/uploads/2019/10/Simit.jpg"
+            alt="">
+
+          <div class="grid-product grid-product-2">
+            <p class="similar-product-name">Plain Pogacha</p>
+            <p class="product-price">$2.99</p>
           </div>
+        </div>
+      </div>
 
+      <div class="grid-similar-product">
 
+        <div class="product-card"> <img src="https://www.grandbazaarist.com/wp-content/uploads/2019/10/Simit.jpg"
+            alt="">
 
-
-
-          <div class="product-card"> <img src="https://www.grandbazaarist.com/wp-content/uploads/2019/10/Simit.jpg"
-              alt="">
-
-            <div class="grid-product grid-product-4">
-              <p class="similar-product-name">Snack plate</p>
-              <p class="product-price">$14.99</p>
-            </div>
+          <div class="grid-product grid-product-3">
+            <p class="similar-product-name">Plain Acma</p>
+            <p class="product-price">$2.99</p>
           </div>
         </div>
 
+
+
+
+
+        <div class="product-card"> <img src="https://www.grandbazaarist.com/wp-content/uploads/2019/10/Simit.jpg"
+            alt="">
+
+          <div class="grid-product grid-product-4">
+            <p class="similar-product-name">Snack plate</p>
+            <p class="product-price">$14.99</p>
+          </div>
+        </div>
       </div>
-
-
-
 
     </div>
-    <!-- footer -->
-    <footer>
-      <div id="footerSection">
-         <div id="footerLogo">
-            <img id="bottom-logo" src="https://assets.website-files.com/5e61309e2ea57b96254de07c/5ec63e2510ee74ccc9acb969_logo.svg" alt="mado-logo">
-            <p>Copyright © 2020 MADO. All rights reserved.</p>
-         </div>
-   
-         <div id="footerLocations">
-            <h4>Locations</h4>
-            <a href="#">Head Office</a>
-            <a href="#">Square One</a>
-            <a href="#">Dufferin</a>
-            <a href="#">Yonge</a>
-         </div>
-   
-         <div id="footerCompany">
-            <h4>Company</h4>
-            <a href="#">About Us</a>
-            <a href="#">Careers</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Visitor Form</a>
-         </div>
-   
-         <div id="footerSocials">
-            <h4>Follow Us</h4>
-            <i class="fa fa-facebook-square"></i>
-            <i class="fa fa-instagram"></i>
-            <i class="fa fa-twitter-square"></i>
-         </div>
-      </div>
-   </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"></script>
-    <script type="module" src="JS-code/main.js"></script>
+
+
+
+  </div>
+  <!-- footer -->
+  <footer>
+    <div id="footerSection">
+       <div id="footerLogo">
+          <img id="bottom-logo" src="https://assets.website-files.com/5e61309e2ea57b96254de07c/5ec63e2510ee74ccc9acb969_logo.svg" alt="mado-logo">
+          <p>Copyright © 2020 MADO. All rights reserved.</p>
+       </div>
+       <div id="footerLocations">
+          <h4>Locations</h4>
+          <ul>
+          <li><a href="#">Head Office</a></li>
+          <li><a href="#">Square One</a></li>
+          <li><a href="#">Dufferin</a></li>
+          <li><a href="#">Yonge</a></li>
+          </ul>
+       </div>
+       <div id="footerCompany">
+          <h4>Company</h4>
+          <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Visitor Form</a></li>
+          </ul>
+       </div>
+       <div id="footerSocials">
+          <h4>Follow Us</h4>
+          <div class="socialmedia">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+          </div>
+       </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script type="module" src="JS-code/main.js"></script>
 </body>
 
 </html>
