@@ -14,6 +14,14 @@
   --img-bg-color: #f7f8fd;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Sora, sans-serif;
+  color: var(--text-blue-color);
+  font-family: "Sora", sans-serif;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -33,7 +41,9 @@ body {
   width: 100%;
   margin: 0 auto;
 }
-
+.menu-part img {
+  width: 100px;
+}
 .logo {
   margin: 10px;
   width: 120px;
@@ -141,6 +151,7 @@ body {
 
 /* category Aisuluu  */
 /* grid container & line */
+
 #menu-part {
   margin-top: 30px;
   padding-left: 0 50px;
@@ -166,19 +177,20 @@ body {
   padding: 10px;
   grid-gap: 50px 100px;
 }
-.grid-item a {
-  pointer-events: none;
-}
-.grid-item {
+.category {
+  overflow: hidden;
   width: 450px;
   height: 200px;
   padding: 20px;
   text-align: center;
   border-radius: 20px;
   box-shadow: 0 10px 20px 10px rgba(98, 106, 117, 0.3);
-  /* -webkit-transition: all 0.3s ease-in-out;
-       transition: all 0.3s ease-in-out; */
+  transition: 0.4s;
+  cursor: pointer;
+  display: block;
+  position: relative;
 }
+
 #grid-text a {
   width: 326px;
   height: 80px;
@@ -186,13 +198,38 @@ body {
   font-weight: bolder;
   font-family: "Shalimar", cursive;
 }
-.grid-item:hover {
-  width: 480px;
-  height: 210px;
+.category:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-blue-color);
+  opacity: 0.3;
+}
+.category:hover {
+  transform: scale(1.1);
+  transition: 0.5s ease;
   opacity: 0.5;
-  background-size: 120%;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+}
+.category:hover::after {
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
+.category a {
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 135%;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  padding: 50px;
+  pointer-events: none;
+  z-index: 1;
+  text-decoration: none;
 }
 /* category -part */
 .master {
@@ -399,7 +436,7 @@ body {
   font-size: 1.1rem;
   font-weight: bold;
   margin: 20px;
-  /* display: none; */
+  display: none;
 }
 .nav-search-items form {
   display: inline-flex;
@@ -466,6 +503,7 @@ body {
 .nav-search-items .show {
   display: block;
 }
+
 .product-wrapper,
 .similar-products {
   display: none;
