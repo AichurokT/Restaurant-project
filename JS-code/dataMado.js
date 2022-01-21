@@ -5,7 +5,7 @@ export const getDataMado = function () {
         "menus": "Breakfasts & Eggs",
         "servedFor": "Platters",
         "itemTitle": "MADO Grand Breakfast",
-        "itemPrice": "$24.99 Per Adult - $12.99 Per Child (Ages 5-12) - Minimum Order of 2",
+        "itemPrice": "$24.99 ",
         "imgURL": "https://assets.website-files.com/5e613103afff65141c9d0b09/618fed287dd18b83e5ef6932_grand%20breakfast.jpg"
     },
     {

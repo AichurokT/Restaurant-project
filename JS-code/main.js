@@ -5,11 +5,13 @@ const dataMado = getDataMado();
 const leftMenu = document.querySelector(".left-menu")
 const rightMenu = document.querySelector(".right-menu")
 const titleMenu = document.querySelector("#h1")
-const gridContainer = document.querySelector("#grid-container")
-const menuId = document.querySelector(".menu-id")
-const searchByNames = document.querySelector("#search-bar")
-const searchBtn = document.querySelector("#searchBtn")
-const li = document.querySelectorAll("li")
+
+const gridContainer=document.querySelector("#grid-container")
+const menuId=document.querySelector(".menu-id")
+const searchByNames=document.querySelector("#search-bar")
+const searchBtn=document.querySelector("#searchBtn")
+
+
 
 // clear fucntion
 function clearContainer() {
@@ -17,32 +19,35 @@ function clearContainer() {
         rightMenu.removeChild(rightMenu.firstChild);
     }
 }
-// getting id from containerAisulu or leftMenu
-function rightMenuAction(event) {
-    const item = event.target;
-    li.forEach(el => el.classList.remove("active")) // remove active class
-    item.classList.add("active");            // add active class
-    titleMenu.innerText = item.innerText
-    const filteredArray = dataMado.filter(el => el.menus.toLowerCase().includes(item.id))
-    showItems(filteredArray)
-    navFilter(filteredArray); // calling filter part and show
+
+// getting id from data
+function rightMenuAction(event){
+const item=event.target;
+titleMenu.innerText=item.innerText
+const filteredArray = dataMado.filter(el => el.menus.toLowerCase().includes(item.id))     
+showItems(filteredArray)
+navFilter(filteredArray); // calling filter part and show
+
+
+
 }
+
 //fucntion for each category
 function showItems(arr) {
     gridContainer.style.display = "none"
     clearContainer()
-    for (let i = 0; i < arr.length; i++) {
-        const newDiv = document.createElement("div")
-        newDiv.className = "menu-item"
-        newDiv.innerHTML = `
-        <a href="#" class="item-card">
-          <div class="item-info">
-             <img src="${arr[i].imgURL}" class="item-img">
-             <div class="served-for">${arr[i].servedFor}</div>
-             <div class="item-name">${arr[i].itemTitle}</div>
-             <div class="item-price">${arr[i].itemPrice}</div>
-          </div>
-        </a>
+    for(let i=0; i<arr.length;i++){
+        const newDiv=document.createElement("div")
+        newDiv.className="menu-items"
+        newDiv.innerHTML=`
+        <img src="${arr[i].imgURL}" class="item-img">
+        
+                     <div class="menu-items">
+                             <div class="served-for">${arr[i].servedFor}</div>
+                             <div class="item-name">${arr[i].itemTitle}</div>
+                             <div class="item-price">${arr[i].itemPrice}</div>
+                         </div>
+                
         `
         rightMenu.appendChild(newDiv)
     }
@@ -121,6 +126,15 @@ function itemTitleFn(filteredArray, dataList) {
     }
 }
 
+
+
+
+// event listeners
+searchBtn.addEventListener("click", searchButton )
+menuId.addEventListener("click", menuDirection)
+gridContainer.addEventListener("click",rightMenuAction )
+leftMenu.addEventListener("click", rightMenuAction)
+
 document.querySelector('.servedForInput').addEventListener('input', function (event) {
     const item = event.target.value;
     console.log(item);
@@ -136,3 +150,4 @@ document.querySelector('.itemTitleInput').addEventListener('input', function (ev
 // document.querySelector("#priceSearch").addEventListener("click", () => {
 //     console.log("price click")
 // })
+

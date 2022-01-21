@@ -7,6 +7,12 @@
   --green-price-color: #44ca67;
   --grey-color: #e7e9ee;
 }
+:root {
+  --item-name-color: #1e3765;
+  --item-price-color: #44ca67;
+  --served-for-color: #8c9bbc;
+  --img-bg-color: #f7f8fd;
+}
 
 * {
   margin: 0;
@@ -15,6 +21,7 @@
   color: var(--text-blue-color);
   font-family: "Sora", sans-serif;
 }
+
 body {
   display: flex;
   flex-direction: column;
@@ -50,12 +57,12 @@ body {
 }
 
 .text {
-position: relative;
+  position: relative;
   height: 20%;
   width: 60%;
   margin-top: 0;
 }
-.taste{
+.taste {
   color: var(--dark-blue-color);
   font-size: 4rem;
   position: absolute;
@@ -63,7 +70,7 @@ position: relative;
   bottom: 11.5rem;
 }
 
-.borek{
+.borek {
   color: var(--main-blue-color);
   font-size: 6rem;
   font-weight: bolder;
@@ -183,6 +190,14 @@ position: relative;
   display: block;
   position: relative;
 }
+
+#grid-text a {
+  width: 326px;
+  height: 80px;
+  font-size: 55px;
+  font-weight: bolder;
+  font-family: "Shalimar", cursive;
+}
 .category:after {
   content: "";
   position: absolute;
@@ -217,27 +232,13 @@ position: relative;
   text-decoration: none;
 }
 /* category -part */
-:root {
-  --item-name-color: #1e3765;
-  --item-price-color: #44ca67;
-  --served-for-color: #8c9bbc;
-  --img-bg-color: #f7f8fd;
-}
-body {
-  box-sizing: border-box;
-  font-family: sans-serif;
-}
 .master {
   display: flex;
-  border: 1px solid red;
-  /* justify-content: space-around; */
 }
 .right-categories {
-  border: 1px solid blue;
   padding: 100px;
 }
 .left-categories {
-  border: 1px solid green;
   padding: 100px;
 }
 /* left-side-menu */
@@ -265,7 +266,7 @@ body {
   transition: all 0.3s ease-in;
   color: #8c9bbc;
   transform-style: preserve-3d;
-  width: 350px;
+  transform: scale(1.1);
   padding: 20px 20px;
   background-image: url("https://assets.website-files.com/5e61309e2ea57b96254de07c/5f1739f1014b410671beedfd_right_arrow_alt.svg");
   background-repeat: no-repeat;
@@ -281,50 +282,62 @@ body {
   color: #1e3765;
 }
 /* right-side-menu */
-.grid-list {
+.menu-items {
+  display: block;
+  width: 100%;
+  color: var(--item-name-color);
+  background-color: var(--img-bg-color);
+  border-radius: 10px;
+  margin: 15px;
+  padding: 15px;
+  box-shadow: 0 2px 6px 0 #8c9bbc;
+}
+.menu-items:hover {
+  transform: scale(1.05);
+  transition: 0.5s ease;
+}
+.right-menu {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
 }
+.right-menu .menu-items {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: 0;
+  padding: 0;
+  max-height: 150px;
+  max-width: 475px;
+}
+.right-menu .menu-items .menu-items {
+  padding: 10px 20px;
+  display: block;
+}
 .item-name {
   color: var(--item-name-color);
-  font-size: 30px;
+  padding: 10px 0;
   font-weight: bold;
 }
 .item-price {
   color: var(--item-price-color);
+  font-size: 1.1rem;
+  overflow: hidden;
 }
 .served-for {
   color: var(--served-for-color);
   font-size: 20px;
 }
 .item-img {
-  /* border: 1px solid red; */
-  /* background-image: url("https://assets.website-files.com/5e613103afff65141c9d0b09/61c930e27847b8066f6b6e4a_lite%20breakfast.jpg"); */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* background-color: var(--img-bg-color); */
-  border-radius: 20px;
-  width: 100px;
-  height: 100px;
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
-.item-card {
-  display: flex;
-  text-decoration: none;
+.active {
+  color: var(--dark-blue-color);
+}
 
-  border-radius: 20px;
-  box-shadow: 0px 0px 20px -3px #5576d1;
-  /* flex-direction: column; */
-}
-.item-info {
-  /* display: flex; */
-  padding: 10px;
-  border-radius: 20px;
-  width: 400px;
-  box-shadow: 0px 0px 10px -5px #5576d1;
-  /* background-color: turquoise; */
-}
 .aichurok {
   display: none;
 }
@@ -490,9 +503,10 @@ body {
 .nav-search-items .show {
   display: block;
 }
-.left-menu .active a {
-  color: var(--dark-blue-color);
-  font-weight: bold;
+
+.product-wrapper,
+.similar-products {
+  display: none;
 }
 
 /* mobile version */
@@ -501,5 +515,12 @@ body {
   #grid-item,
   #line {
     width: 100%;
+  }
+}
+@media screen and (max-width: 370px) {
+  .left-categories {
+    display: block;
+    width: 100px;
+    height: 100px;
   }
 }
