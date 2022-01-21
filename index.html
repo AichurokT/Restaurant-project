@@ -143,35 +143,35 @@
         ">
         <a href="#">Baklava</a>
       </div>
-      <div class="category" id="Desserts" style="
+      <div class="category" id="desserts" style="
           background-image: url('https://www.mademoiselledesserts.com/medias/images/gamme-patissiere/familles/uk/produits/pudding-large.jpg');
           background-repeat: no-repeat;
           background-size: cover;
         ">
         <a href="#">Hot Desserts</a>
       </div>
-      <div class="category" id="Desserts" style="
+      <div class="category" id="desserts" style="
           background-image: url('https://files.heftycdn.com/wp-content/uploads/2019/04/9b1d50393b738508fc1fe0933222af52-1.jpg');
           background-repeat: no-repeat;
           background-size: cover;
         ">
         <a href="#">Cold Desserts</a>
       </div>
-      <div class="category" id="Cream" style="
+      <div class="category" id="cream" style="
           background-image: url('https://www.thefrozenyogurtreview.com/wp-content/uploads/2014/03/Ice-Cr-Vs-Froyo.jpg');
           background-repeat: no-repeat;
           background-size: cover;
         ">
         <a href="#">Ice Cream & Frozen Yogurt</a>
       </div>
-      <div class="category" id="Drinks" style="
+      <div class="category" id="drinks" style="
           background-image: url('http://www.coachhouseinn.co.uk/wp-content/uploads/2016/09/billionphotos-1675816.jpg');
           background-repeat: no-repeat;
           background-size: cover;
         ">
         <a href="#">Hot Drinks</a>
       </div>
-      <div class="category" id="Drinks" style="
+      <div class="category" id="drinks" style="
           background-image: url('https://dish-environment-prod-contentbucket-10u8bszryovz3.s3.amazonaws.com/assets/s3fs-public/styles/social_share/public/Photo-by-Meredith1.jpg?itok=JzsBZzKJ');
           background-repeat: no-repeat;
           background-size: cover;
@@ -205,11 +205,9 @@
 
     <form action="" class="slidecontainer">
       <!-- <label for="vol">Price (between 0 and 100):</label> <br> -->
-      <span>price from:</span> <span id="vMin"></span>
-      <input type="range" class="slidePrice" id="priceMin" value="10" name="priceMin"><br>
-      <span>price to:</span> <span id="vMax"></span>
-      <input type="range" class="slidePrice" id="priceMax" value="50"><br>
-      <input type="submit" value="Submit">
+      <span>price max:</span> <span id="vMax"></span>
+      <input type="range" class="slidePrice" id="priceMax" value="20" max="60"><br>
+      <input type="submit" value="Submit" id="priceSearch">
     </form>
   </div>
   <br>

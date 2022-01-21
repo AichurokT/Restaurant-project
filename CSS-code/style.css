@@ -490,6 +490,10 @@ body {
 .nav-search-items .show {
   display: block;
 }
+.left-menu .active a {
+  color: var(--dark-blue-color);
+  font-weight: bold;
+}
 
 /* mobile version */
 

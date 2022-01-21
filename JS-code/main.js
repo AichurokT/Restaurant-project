@@ -9,6 +9,7 @@ const gridContainer = document.querySelector("#grid-container")
 const menuId = document.querySelector(".menu-id")
 const searchByNames = document.querySelector("#search-bar")
 const searchBtn = document.querySelector("#searchBtn")
+const li = document.querySelectorAll("li")
 
 // clear fucntion
 function clearContainer() {
@@ -19,6 +20,8 @@ function clearContainer() {
 // getting id from containerAisulu or leftMenu
 function rightMenuAction(event) {
     const item = event.target;
+    li.forEach(el => el.classList.remove("active")) // remove active class
+    item.classList.add("active");            // add active class
     titleMenu.innerText = item.innerText
     const filteredArray = dataMado.filter(el => el.menus.toLowerCase().includes(item.id))
     showItems(filteredArray)
@@ -71,25 +74,18 @@ leftMenu.addEventListener("click", rightMenuAction)
 const navFilterBlock = document.querySelector(".nav-search-items");
 const itemTitle = document.querySelector("#itemTitle");
 const servedFor = document.querySelector("#servedFor");
-
+// ------ slidecontainer---
+const slideMax = document.getElementById("priceMax");
+const x = document.getElementById("vMax");
+// ------ slidecontainer--- ^^^
+function filtrPrice() {
+    x.innerHTML = slideMax.value;
+    slideMax.oninput = function () {
+        x.innerHTML = this.value;
+    };
+}
 function navFilter(filteredArray) {
     navFilterBlock.style.display = "block";
-    // ------ slidecontainer---
-    const slideMin = document.getElementById("priceMin");
-    const slideMax = document.getElementById("priceMax");
-    const y = document.getElementById("vMin");
-    const x = document.getElementById("vMax");
-    // ------ slidecontainer--- ^^^
-    function filtrPrice() {
-        y.innerHTML = slideMin.value;
-        x.innerHTML = slideMax.value;
-        slideMin.oninput = function () {
-            y.innerHTML = this.value;
-        };
-        slideMax.oninput = function () {
-            y.innerHTML = this.value;
-        };
-    }
     filtrPrice();
     itemTitleFn(filteredArray, itemTitle);
     servedForFn(filteredArray, servedFor)
@@ -137,3 +133,6 @@ document.querySelector('.itemTitleInput').addEventListener('input', function (ev
     const filteredArray = dataMado.filter((el) => el.itemTitle.includes(item));
     showItems(filteredArray)
 })
+// document.querySelector("#priceSearch").addEventListener("click", () => {
+//     console.log("price click")
+// })
