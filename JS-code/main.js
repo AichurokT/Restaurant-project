@@ -14,20 +14,27 @@ const li = document.querySelectorAll("li")
 const mainContainer = document.querySelector(".main-conatiner")
 const categoryPart = document.querySelector(".master")
 const madoPage = document.querySelector(".mado-logo")
-const showDetailsItems=document.querySelector(".menu-items")
-const details= document.querySelector(".product-wrapper")
+const backToMenu = document.querySelector("#homeIcon")
+const details = document.querySelector(".product-wrapper")
+const similarProducts = document.querySelector(".similar-products")
 
 // clear fucntion
 function clearContainer() {
     while (rightMenu.hasChildNodes()) {
         rightMenu.removeChild(rightMenu.firstChild);
     }
+    while (details.hasChildNodes()) {
+        details.removeChild(details.firstChild);
+    }
 }
+
+
 function showMainPage() {
     mainContainer.style.display = "block"
     categoryPart.style.display = "none"
     gridContainer.style.display = "none"
     menuPart.style.display = "none"
+    navFilterBlock.style.display = "none"
 }
 
 // getting id from container or leftMenu
@@ -50,6 +57,7 @@ function showItems(arr) {
     menuPart.style.display = "none"
     mainContainer.style.display = "none"
     categoryPart.style.display = "flex"
+    details.style.display = "none"
     clearContainer()
     for (let i = 0; i < arr.length; i++) {
         const newDiv = document.createElement("div")
@@ -71,6 +79,15 @@ function menuDirection() {
     menuPart.style.display = "block"
     mainContainer.style.display = "none"
     categoryPart.style.display = "none"
+    details.style.display = "none"
+    navFilterBlock.style.display = "none"
+
+}
+function backToCateg() {
+    details.style.display = "none"
+    categoryPart.style.display = "flex"
+    navFilterBlock.style.display = "none"
+
 }
 // search fucntion by itemTitle name
 function searchButton() {
@@ -79,16 +96,16 @@ function searchButton() {
     return showItems(searchedArray)
 }
 // fucntions to show details (daaniyars part)
-function showDetails(event){
+function showDetails(event) {
     const items = event.target;
-    const searchedItems= dataMado.filter(el => el.id.toString().includes(items.id))
+    const searchedItems = dataMado.filter(el => el.id.toString().includes(items.id))
     categoryPart.style.display = "none"
     clearContainer()
-    details.style.display="block"
-    for (let i=0; i<searchedItems.length;i++){
-    const detailDiv = document.createElement("div")
-    detailDiv.className="product-container"
-    detailDiv.innerHTML=`
+    details.style.display = "block"
+    for (let i = 0; i < searchedItems.length; i++) {
+        const detailDiv = document.createElement("div")
+        detailDiv.className = "product-container"
+        detailDiv.innerHTML = `
     <div class="chosen-product-img">
         <img src="${searchedItems[i].imgURL}" alt="">
       </div>
@@ -113,34 +130,50 @@ function showDetails(event){
         <hr>
       </div>
     `
-    details.appendChild(detailDiv)
+
+
+        details.appendChild(detailDiv)
+    }
+    // similar items
+    for (let i = 0; i < 4; i++) {
+        let ran = Math.floor(Math.random() * dataMado.length)
+        similarProducts.style.display = "grid"
+        const detailDiv = document.createElement("div")
+        detailDiv.className = "similar-product-list"
+        detailDiv.innerHTML = `
+        <div class="grid-similar-product">
+        <div class="product-card"> <img src="${dataMado[ran].imgURL}"
+            alt="">
+
+          <div class="grid-product grid-product-1">
+            <p class="similar-product-name">${dataMado[ran].itemTitle}</p>
+            <p class="product-price"></p>
+          </div>
+        </div>
+      </div>
+        `
+
+
+        details.appendChild(detailDiv)
     }
 }
-    // for (let i=0; i <arr.length; i++){
-    //     const details= document.createElement("div")
-    //     details.className=""
-    //     details.innerHTML=""
-    // }
-
-
-
-
-/// Please double check this code ----\/
-// const searchData = dataMado.filter((el) => {
-//     let valArr = Object.values(el);
-//     return valArr.toString().toLowerCase().includes(result);
-//   });
 
 // filtr part Nur
 const navFilterBlock = document.querySelector(".nav-search-items");
 const itemTitle = document.querySelector("#itemTitle");
 const servedFor = document.querySelector("#servedFor");
 // ------ slidecontainer---
+const slideMin = document.getElementById("priceMin");
 const slideMax = document.getElementById("priceMax");
+const y = document.getElementById("vMin");
 const x = document.getElementById("vMax");
 // ------ slidecontainer--- ^^^
 function filtrPrice() {
+    y.innerHTML = slideMin.value;
     x.innerHTML = slideMax.value;
+    slideMin.oninput = function () {
+        y.innerHTML = this.value;
+    };
     slideMax.oninput = function () {
         x.innerHTML = this.value;
     };
@@ -181,12 +214,7 @@ function itemTitleFn(filteredArray, dataList) {
         }
     }
 }
-
-
-
-
-
-
+// search functions
 document.querySelector('.servedForInput').addEventListener('input', function (event) {
     const item = event.target.value;
     console.log(item);
@@ -203,8 +231,10 @@ document.querySelector('.itemTitleInput').addEventListener('input', function (ev
 })
 document.querySelector("#priceSearch").addEventListener("click", (evt) => {
     evt.preventDefault();
-    let priceSearched = +x.innerText
-    const filteredArray=dataMado.filter(el=>+Math.ceil(el.itemPrice.replace(/\$/g,''))<priceSearched)
+    let priceMax = +x.innerText
+    let priceMin = +y.innerText
+    const filteredArray = dataMado.filter(el =>
+        +(el.itemPrice.replace(/\$/g, '')) <= priceMax && +(el.itemPrice.replace(/\$/g, '')) >= priceMin)
     return showItems(filteredArray)
 })
 
@@ -215,3 +245,4 @@ gridContainer.addEventListener("click", rightMenuAction)
 leftMenu.addEventListener("click", rightMenuAction)
 madoPage.addEventListener("click", showMainPage)
 rightMenu.addEventListener("click", showDetails)
+backToMenu.addEventListener("click", backToCateg)

@@ -33,6 +33,13 @@ body {
   background-color: #fff;
   box-shadow: 0px 0px 10px -3px #5576d1;
 }
+#search-bar{
+  border-radius: 10px;
+  border: 1px solid #5576D1;
+}
+#searchBtn{
+  border:none;
+}
 .left-menu a {
   text-decoration: none;
   color: #8c9bbc;
