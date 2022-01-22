@@ -391,6 +391,8 @@ body {
 
 .delivery-logo img {
   width: 60px;
+  border-radius: 10px;
+  margin: 10px 0;
 }
 
 .similar-product-list {
@@ -440,10 +442,14 @@ body {
 /* -- nav - search - item -  -- */
 
 .nav-search-items {
+  margin-top: 100px;
   font-size: 1.1rem;
   font-weight: bold;
-  margin: 20px;
-  display: none;
+  margin-top: 80px;
+  margin-left: 20%;
+  background-color: rgba(255, 255, 255, 0.664);
+
+  /* display: none; */
 }
 .nav-search-items form {
   display: inline-flex;
@@ -515,6 +521,14 @@ body {
 .similar-products {
   display: none;
 }
+.similar-product-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.product-wrapper {
+  padding: 70px;
+  margin-top: 30px;
+}
 .left-menu .active a {
   color: var(--dark-blue-color);
   font-weight: bold;
@@ -564,23 +578,22 @@ footer p {
   width: 40px;
   padding: 10px;
 }
-#imageCard{
+#imageCard {
   width: 1000px;
-  margin:0 auto;
- }
- #imageCard h2{
-   color:var(--main-blue-color);
-   font-size: 40px;
- }
- #imageCard p{
-   color: var(--green-price-color);
-   font-weight: bold;
+  margin: 0 auto;
 }
- #imageCard #total{
- color: var(--dark-blue-color);
- font-weight: bolder;
+#imageCard h2 {
+  color: var(--main-blue-color);
+  font-size: 40px;
 }
-
+#imageCard p {
+  color: var(--green-price-color);
+  font-weight: bold;
+}
+#imageCard #total {
+  color: var(--dark-blue-color);
+  font-weight: bolder;
+}
 @media only screen and (max-width: 500px) {
   #grid-item,
   #line {

@@ -25,7 +25,7 @@
         <img class="logo"
           src="https://assets.website-files.com/5e61309e2ea57b96254de07c/5ec63e2510ee74ccc9acb969_logo.svg">
       </div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">span
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span>
         class="navbar-toggler-icon"></span>
       </button>
 
@@ -183,7 +183,7 @@
   <div> </div>
   <!-- nav - search - item -  -->
   <div class="nav-search-items">
-    <div id="home-menu"><i class="fas fa-home"> / Menu</i></div>
+    <div id="home-menu"><i id="homeIcon" class="fas fa-home"> / Menu</i></div>
 
     <form action="">
       <input class="allData" type="text" placeholder="Search ...">
@@ -201,8 +201,9 @@
     </form>
 
     <form action="" class="slidecontainer">
-      <!-- <label for="vol">Price (between 0 and 100):</label> <br> -->
-      <span>price max:</span> <span id="vMax"></span>
+      <span>price from:</span> <span id="vMin"></span>
+      <input type="range" class="slidePrice" id="priceMin" max="40" name="priceMin"><br>
+      <span>price to:</span> <span id="vMax"></span>
       <input type="range" class="slidePrice" id="priceMax" max="60"><br>
       <input type="submit" value="Submit" id="priceSearch">
     </form>
@@ -234,90 +235,19 @@
       <div class="right-menu"></div>
     </aside>
   </div>
-
-
   <!-- Daniiar one product -->
-
   <div class="product-wrapper">
     <div class="product-container"></div>
   </div>
-
   <!--Here Similar Products -->
-
-  <div class="similar-products">
-    <div>
+  <div class="similar-products"> <div>
       <h3 class="similar-h1">Similar Products</h3>
     </div>
-
-
     <div class="similar-product-list">
-
-      <div class="grid-similar-product">
-
-
-
-        <div class="product-card"> <img src="https://www.grandbazaarist.com/wp-content/uploads/2019/10/Simit.jpg"
-            alt="">
-
-          <div class="grid-product grid-product-1">
-            <p class="similar-product-name">Pogacha with Cheese</p>
-            <p class="product-price">$2.99</p>
-          </div>
-        </div>
-
-
-
-
-
-
-        <div class="product-card"> <img src="https://www.grandbazaarist.com/wp-content/uploads/2019/10/Simit.jpg"
-            alt="">
-
-          <div class="grid-product grid-product-2">
-            <p class="similar-product-name">Plain Pogacha</p>
-            <p class="product-price">$2.99</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-similar-product">
-
-        <div class="product-card"> <img src="https://www.grandbazaarist.com/wp-content/uploads/2019/10/Simit.jpg"
-            alt="">
-
-          <div class="grid-product grid-product-3">
-            <p class="similar-product-name">Plain Acma</p>
-            <p class="product-price">$2.99</p>
-          </div>
-        </div>
-
-
-
-
-
-        <div class="product-card"> <img src="https://www.grandbazaarist.com/wp-content/uploads/2019/10/Simit.jpg"
-            alt="">
-
-          <div class="grid-product grid-product-4">
-            <p class="similar-product-name">Snack plate</p>
-            <p class="product-price">$14.99</p>
-          </div>
-        </div>
-      </div>
-
     </div>
-
-
-
-
   </div>
 
-  <div id="imageCard">
-    <div><img src="https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly90Yi1zdGF0aWMudWJlci5jb20vcHJvZC9pbWFnZS1wcm9jL3Byb2Nlc3NlZF9pbWFnZXMvNDFiMjQxODMwYjU5ZDlkNTIxNTEyYzRiNDVlODQxNTEvODU5YmFmZjFkNzYwNDJhNDVlMzE5ZDFkZTgwYWVjN2EuanBlZw=="></div>
-    <h2>Frozen Yogurt</h2>
-    <p>$7.99</p>
-    <div id="total">Total:</div>
-  </div>
+  
   <!-- footer -->
   <footer>
     <div id="footerSection">
