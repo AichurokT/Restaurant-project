@@ -5,7 +5,6 @@ const dataMado = getDataMado();
 const leftMenu = document.querySelector(".left-menu")
 const rightMenu = document.querySelector(".right-menu")
 const titleMenu = document.querySelector("#h1")
-
 const gridContainer = document.querySelector("#grid-container")
 const menuPart = document.querySelector("#menu-part")
 const menuId = document.querySelector(".menu-id")
@@ -15,7 +14,8 @@ const li = document.querySelectorAll("li")
 const mainContainer = document.querySelector(".main-conatiner")
 const categoryPart = document.querySelector(".master")
 const madoPage = document.querySelector(".mado-logo")
-
+const showDetailsItems=document.querySelector(".menu-items")
+const details= document.querySelector(".product-wrapper")
 
 // clear fucntion
 function clearContainer() {
@@ -56,8 +56,7 @@ function showItems(arr) {
         newDiv.className = "menu-items"
         newDiv.innerHTML = `
         <img src="${arr[i].imgURL}" class="item-img">
-        
-                     <div class="menu-items">
+                     <div id="${arr[i].id}" class="menu-items">
                              <div class="served-for">${arr[i].servedFor}</div>
                              <div class="item-name">${arr[i].itemTitle}</div>
                              <div class="item-price">${arr[i].itemPrice}</div>
@@ -79,6 +78,50 @@ function searchButton() {
     const searchedArray = dataMado.filter(el => el.itemTitle.toLowerCase().includes(result))
     return showItems(searchedArray)
 }
+// fucntions to show details (daaniyars part)
+function showDetails(event){
+    const items = event.target;
+    const searchedItems= dataMado.filter(el => el.id.toString().includes(items.id))
+    categoryPart.style.display = "none"
+    clearContainer()
+    details.style.display="block"
+    for (let i=0; i<searchedItems.length;i++){
+    const detailDiv = document.createElement("div")
+    detailDiv.className="product-container"
+    detailDiv.innerHTML=`
+    <div class="chosen-product-img">
+        <img src="${searchedItems[i].imgURL}" alt="">
+      </div>
+      <div class="product-container-right">
+        <div>
+          <h1 class="chosen-product-name">${searchedItems[i].itemTitle}</h1>
+        </div>
+        <div>
+          <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque odio,
+            voluptatibus non, debitis mollitia numquam in repellat, labore optio perferendis consequatur quos. Eum ullam
+            modi a deleniti sapiente consequuntur ipsa.</p>
+        </div>
+
+        <div>
+          <p class="product-price">${searchedItems[i].itemPrice}</p>
+        </div>
+        <button class="addCart">add <i class="fas fa-cart-arrow-down"></i></button>
+        <div>
+             <div class="delivery-logo"><img src="https://assets.website-files.com/5e613103afff65141c9d0b09/6096052c84b19f2914d274f4_492x0w.jpg"  alt=""> </div> 
+          <p>Order from:</p>
+        </div>
+        <hr>
+      </div>
+    `
+    details.appendChild(detailDiv)
+    }
+}
+    // for (let i=0; i <arr.length; i++){
+    //     const details= document.createElement("div")
+    //     details.className=""
+    //     details.innerHTML=""
+    // }
+
 
 
 
@@ -171,3 +214,4 @@ menuId.addEventListener("click", menuDirection)
 gridContainer.addEventListener("click", rightMenuAction)
 leftMenu.addEventListener("click", rightMenuAction)
 madoPage.addEventListener("click", showMainPage)
+rightMenu.addEventListener("click", showDetails)
